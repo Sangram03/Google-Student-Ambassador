@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Award, BookOpen, Network, Briefcase, Zap, Users, Gift, Trophy, Star } from 'lucide-react';
 
 const Benefits = () => {
@@ -100,20 +100,7 @@ const Benefits = () => {
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg inline-block">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Unlock All These Benefits?</h3>
-            <p className="text-gray-600 mb-6 max-w-md">
-              Join 50+ students who have successfully entered the program through my referral system and are already enjoying these rewards.
-            </p>
-            <button 
-              onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium"
-            >
-              Apply with My Referral
-            </button>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

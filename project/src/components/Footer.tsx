@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -39,8 +39,8 @@ const Footer = () => {
               <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">AI Projects</a></li>
               <li><a href="#benefits" className="text-gray-400 hover:text-white transition-colors">Referral Benefits</a></li>
               <li><a href="#team" className="text-gray-400 hover:text-white transition-colors">About Me</a></li>
-              <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
-              <li><a href="#registration" className="text-gray-400 hover:text-white transition-colors">Get Referral</a></li>
+              <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Unlock Qr Scanner</a></li>
+           
             </ul>
           </div>
 

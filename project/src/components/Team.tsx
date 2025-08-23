@@ -1,50 +1,91 @@
-import React from 'react';
 import { Linkedin, Twitter, Github, Users } from 'lucide-react';
+import * as Images from '../assets/asset';
 
 const Team = () => {
   const teamMembers = [
+    
     {
-      name: "Priya Sharma",
-      role: "AI Research Intern",
-      img: "https://randomuser.me/api/portraits/women/44.jpg",
+      name: "Rajib Panda",
+      role: "Frontend Lead",
+      img: Images.RajibPanda,
       linkedin: "#",
       twitter: "#",
       github: "#"
     },
     {
-      name: "Rohan Patel",
-      role: "Full-Stack Developer",
-      img: "https://randomuser.me/api/portraits/men/46.jpg",
+      name: "Krushna Chandra Bindhani",
+      role: "Social Media Manager",
+      img: Images.KrushnaChandraBindhani,
+      linkedin: "https://www.linkedin.com/in/krushna-chandra-bindhani-1b1342275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "#",
+      github: "#"
+    },
+    {
+      name: "Bhababhanjan Panda",
+      role: "Frontend Lead",
+      img: Images.BhabaImage,
+      linkedin: "https://www.linkedin.com/in/bhababhanjan-panda-65b340275/",
+      twitter: "#",
+      github: "#"
+    },
+    {
+      name: "Kajal Panigrahi",
+      role: "Content Writing",
+      img: Images.KajalImage,
+      linkedin:"https://www.linkedin.com/in/kajal-panigrahi-99a23b275/",
+      twitter: "#",
+      github: "#"
+    },
+    {
+      name: "Chinmayee Charuprava Panda",
+      role: "Content Writing",
+      img: Images.CharuPanda,
       linkedin: "#",
       twitter: "#",
       github: "#"
     },
     {
-      name: "Aditi Verma",
-      role: "Data Scientist",
-      img: "https://randomuser.me/api/portraits/women/65.jpg",
-      linkedin: "#",
-      twitter: "#",
-      github: "#"
-    },
-    {
-      name: "Arjun Mehta",
-      role: "Community Manager",
+      name: "Sadashiba Behera",
+      role: "Social Media Manager",
       img: "https://randomuser.me/api/portraits/men/52.jpg",
       linkedin: "#",
       twitter: "#",
       github: "#"
-    }
+    },
+    {
+      name: "Bhakti Ranjan Das",
+      role: "Social Media Manager",
+      img: Images.BhakiDas,
+      linkedin: "https://www.linkedin.com/in/bhakti-ranjan-das-a87094275",
+      twitter: "#",
+      github: "#"
+    },
+    {
+      name: "Prakash Jena",
+      role: "Backend Lead",
+      img: Images.PrakashJena,
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    },
+    {
+      name: "Sangram Das",
+      role: "Overall Lead",
+      img: Images.SangramDas,
+      linkedin: "https://www.linkedin.com/in/sangram-das-710397275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "#",
+      github: "#"
+    },
   ];
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-br from-white to-blue-50">
+    <section id="team" className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Team Members */}
-        <div className="text-center mb-12">
-          <Users className="w-10 h-10 mx-auto text-purple-600 mb-4" />
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <Users className="w-12 h-12 mx-auto text-purple-600 mb-4 animate-bounce" />
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Meet My Team
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -53,29 +94,32 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Team Members (Responsive Grid) */}
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 hover:shadow-2xl transition-all duration-300 w-64"
             >
-              <img
-                src={member.img}
-                alt={member.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-              />
+              <div className="relative mx-auto mb-4">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-28 h-28 rounded-full mx-auto object-cover ring-4 ring-purple-200 hover:ring-purple-400 transition duration-300"
+                />
+              </div>
               <h4 className="text-lg font-semibold text-gray-900">
                 {member.name}
               </h4>
               <p className="text-gray-600 mb-4">{member.role}</p>
-              <div className="flex justify-center space-x-4">
-                <a href={member.linkedin} className="text-gray-400 hover:text-blue-600">
+              <div className="flex justify-center space-x-5">
+                <a href={member.linkedin} className="text-gray-400 hover:text-blue-600 transform hover:scale-110 transition">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href={member.twitter} className="text-gray-400 hover:text-blue-400">
+                <a href={member.twitter} className="text-gray-400 hover:text-sky-400 transform hover:scale-110 transition">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href={member.github} className="text-gray-400 hover:text-gray-700">
+                <a href={member.github} className="text-gray-400 hover:text-gray-800 transform hover:scale-110 transition">
                   <Github className="w-5 h-5" />
                 </a>
               </div>
@@ -83,22 +127,7 @@ const Team = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Work Together?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Let's collaborate on cutting-edge AI projects and accelerate your journey into the Google Student Ambassador Program. 
-            My mentorship and referral system has a 100% success rate.
-          </p>
-          <button
-            onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-colors duration-200 font-medium"
-          >
-            Start Your Referral Application
-          </button>
-        </div>
+        
       </div>
     </section>
   );
