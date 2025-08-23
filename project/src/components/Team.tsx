@@ -63,7 +63,7 @@ const Team = () => {
     {
       name: "Prakash Jena",
       role: "Backend Lead",
-      img: Images.PrakashJena,
+      img: Images.Prakashjena,
       linkedin: "#",
       twitter: "#",
       github: "#"
