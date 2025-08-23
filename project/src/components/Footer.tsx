@@ -1,32 +1,38 @@
-
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              <span className="text-xl font-bold">AI Ambassador Referral</span>
+              <span className="text-xl font-bold">Google Ambassador Referral</span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
               Helping students join Google Student Ambassador Program through AI expertise, 
               Gemini project mentorship, and guaranteed referral success.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://facebook.com" aria-label="Facebook"
+                 className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://twitter.com" aria-label="Twitter"
+                 className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                 <Twitter className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://linkedin.com" aria-label="LinkedIn"
+                 className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.instagram.com/gdsc__srinix/" aria-label="Instagram"
+                 className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                 <Instagram className="w-6 h-6" />
               </a>
             </div>
@@ -39,8 +45,7 @@ const Footer = () => {
               <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">AI Projects</a></li>
               <li><a href="#benefits" className="text-gray-400 hover:text-white transition-colors">Referral Benefits</a></li>
               <li><a href="#team" className="text-gray-400 hover:text-white transition-colors">About Me</a></li>
-              <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Unlock Qr Scanner</a></li>
-           
+              <li><a href="#referral" className="text-gray-400 hover:text-white transition-colors">Unlock QR Scanner</a></li>
             </ul>
           </div>
 
@@ -50,7 +55,9 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">sangramraju143@gmail.com</span>
+                <a href="mailto:sangramraju143@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  sangramraju143@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-400" />
@@ -71,16 +78,25 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
               <p className="text-gray-400">Get updates on AI projects and referral opportunities.</p>
             </div>
-            <div className="flex space-x-4">
+            <form className="flex space-x-4" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
                 placeholder="Enter your email for AI updates"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
+                required
+                aria-label="Email for AI updates"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg 
+                           focus:ring-2 focus:ring-blue-500 focus:border-transparent 
+                           text-white placeholder-gray-400"
               />
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-colors font-medium">
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white 
+                           px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 
+                           transition-colors font-medium"
+              >
                 Subscribe
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
