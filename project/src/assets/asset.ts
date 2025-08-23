@@ -8,7 +8,10 @@ import Prakashjena from "./Prakashjena.jpg";
 import BhakiDas from "./BhakiDas.jpg";
 import RajibPanda from "./RajibPanda.jpg";
 import CharuPanda from "./CharuPanda.jpg";
-import Scanner from "./Scanner.jpg"
+import Scanner from "./Scanner.jpg";
+import SadashibaBeheraImage from "./SadashibaBehera.jpg";
+
+
 export {
   KajalImage,
   BhabaImage,
@@ -18,5 +21,6 @@ export {
   BhakiDas,
   RajibPanda,
   CharuPanda,
-  Scanner
+  Scanner,
+  SadashibaBeheraImage,
 };

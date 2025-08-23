@@ -47,7 +47,7 @@ const Team = () => {
     {
       name: "Sadashiba Behera",
       role: "Social Media Manager",
-      img: "https://randomuser.me/api/portraits/men/52.jpg",
+      img:Images.SadashibaBeheraImage,
       linkedin: "#",
       twitter: "#",
       github: "#"
