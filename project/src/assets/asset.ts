@@ -10,6 +10,7 @@ import RajibPanda from "./RajibPanda.jpg";
 import CharuPanda from "./CharuPanda.jpg";
 import Scanner from "./Scanner.jpg";
 import SadashibaBeheraImage from "./SadashibaBehera.jpg";
+import KrishImage from "./Krish.jpg"
 
 
 export {
@@ -23,4 +24,5 @@ export {
   CharuPanda,
   Scanner,
   SadashibaBeheraImage,
+  KrishImage
 };

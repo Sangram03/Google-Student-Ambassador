@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -8,14 +8,24 @@ const Header = () => {
     <header className="fixed top-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/60 backdrop-blur-xl shadow-lg z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
+
           {/* Logo + Title */}
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-md animate-gradient"></div>
+            {/* Google Logo inside circle */}
+            <div className="w-9 h-9 rounded-full shadow-md flex items-center justify-center bg-white">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                alt="Google Logo"
+                className="w-6 h-6 object-contain"
+              />
+            </div>
+
+            {/* Text */}
             <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight">
               Google Ambassador
             </span>
           </div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

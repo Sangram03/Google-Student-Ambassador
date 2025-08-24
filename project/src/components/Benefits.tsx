@@ -1,15 +1,9 @@
 
-import { Award, BookOpen, Network, Briefcase, Zap, Users, Gift, Trophy, Star } from 'lucide-react';
+import { BookOpen, Network, Briefcase, Zap, Users, Gift, Trophy, Star } from 'lucide-react';
 
 const Benefits = () => {
   const benefits = [
-    // 🔥 Referral-only benefits
-    {
-      icon: Award,
-      title: "Guaranteed Referral Bonus",
-      description: "Get priority consideration and insider tips that increase your acceptance chances by 300%.",
-      color: "from-purple-500 to-purple-600"
-    },
+    // 🔥 Referral-only benefit
     {
       icon: BookOpen,
       title: "AI & Gemini Masterclass",

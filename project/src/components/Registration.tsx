@@ -1,4 +1,4 @@
-import { QrCode, PlayCircle, Sparkles, CheckCircle2 } from "lucide-react";
+import { QrCode, PlayCircle, Sparkles, CheckCircle2, XCircle } from "lucide-react";
 import * as Images from "../assets/asset";
 
 const ReferralAccess = () => {
@@ -91,8 +91,61 @@ const ReferralAccess = () => {
               ))}
             </ul>
           </div>
-
         </div>
+
+        {/* Comparison Section */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">
+            Why Gemini Pro is Better than Free ChatGPT 🤔
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Free ChatGPT */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 border border-red-200 hover:shadow-xl transition">
+              <h4 className="text-xl font-semibold text-red-600 mb-4 text-center">
+                Free ChatGPT (Limitations)
+              </h4>
+              <ul className="space-y-3 text-gray-700">
+                {[
+                  "Limited access to advanced models",
+                  "No video generation support",
+                  "Restricted in-depth research",
+                  "Lower priority in server response times",
+                  "No integration with Gmail, Docs, or Drive",
+                  "Minimal storage and benefits",
+                ].map((limitation, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-1" />
+                    <span>{limitation}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Gemini Pro */}
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-8 border border-green-200 hover:shadow-xl transition">
+              <h4 className="text-xl font-semibold text-green-700 mb-4 text-center">
+                Google Gemini Pro (Advantages)
+              </h4>
+              <ul className="space-y-3 text-gray-700">
+                {[
+                  "Latest multimodal AI with advanced reasoning",
+                  "Create videos, images, and deep research",
+                  "Priority access with faster responses",
+                  "Integrated with Gmail, Docs, and Drive",
+                  "Extra 2TB storage & premium Google perks",
+                  "Ideal for students, creators, and professionals",
+                ].map((advantage, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                    <span>{advantage}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
