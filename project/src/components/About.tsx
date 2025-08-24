@@ -59,7 +59,7 @@ const About = () => {
             return (
               <div
                 key={index}
-                className="relative text-center group bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300"
+                className="relative text-center border border-black group bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
                   <IconComponent className="w-8 h-8 text-white" />
@@ -76,7 +76,7 @@ const About = () => {
         </div>
 
         {/* Projects Section */}
-        <div className="mt-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12">
+        <div className="mt-20 bg-gradient-to-r border border-black from-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">

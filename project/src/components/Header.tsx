@@ -5,7 +5,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/60 backdrop-blur-xl shadow-lg z-50">
+    <header className="fixed top-4 left-4 right-4 rounded-3xl border border-black  backdrop-blur-xl shadow-lg z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
@@ -34,6 +34,9 @@ const Header = () => {
               { name: "Benefits", href: "#benefits" },
               { name: "About My Team", href: "#team" },
               { name: "Unlock & QR Code", href: "#referral" },
+              { name: "FAQ", href: "#footer" },
+              { name: "Blog", href: "#blog" },
+
             ].map((link, index) => (
               <a
                 key={index}
@@ -70,6 +73,8 @@ const Header = () => {
                 { name: "Benefits", href: "#benefits" },
                 { name: "About My Team", href: "#team" },
                 { name: "Unlock & QR Code", href: "#referral" },
+                { name: "FAQ", href: "#footer" },
+                { name: "Blog", href: "#blog" },
               ].map((link, index) => (
                 <a
                   key={index}

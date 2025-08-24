@@ -79,7 +79,7 @@ const Benefits = () => {
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div key={index} className="bg-white border border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-r ${benefit.color} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-200`}>
                   <IconComponent className="w-7 h-7 text-white" />
                 </div>
