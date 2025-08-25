@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Mail,
   Phone,
@@ -9,6 +9,7 @@ import {
   Instagram,
   Plus,
   Minus,
+  ArrowUp,
 } from "lucide-react";
 
 const Footer = () => {
@@ -45,33 +46,62 @@ const Footer = () => {
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (index: number | SetStateAction<null>) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const toggleFAQ = (index: number | null) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  // Show/hide back-to-top button
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
       id="footer"
-      className="bg-gray-100 text-gray-900 pt-10 transition-colors"
+      className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-gray-900"
     >
+      {/* Wave divider */}
+      <div className="absolute top-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="url(#grad)"
+            d="M0,32L48,53.3C96,75,192,117,288,122.7C384,128,480,96,576,85.3C672,75,768,85,864,85.3C960,85,1056,75,1152,64C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#a855f7" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
       {/* FAQ Section */}
-      <div className="pt-12  ">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+      <div className="pt-20">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Frequently Asked Questions
         </h2>
         <div className="space-y-6 max-w-4xl mx-auto px-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white  text-gray-800 rounded-xl p-4 shadow-sm"
+              className="bg-white/70 backdrop-blur-md text-gray-800 rounded-xl p-5 shadow-md hover:shadow-lg transition"
             >
               <button
                 className="flex justify-between items-center w-full text-left"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="text-base md:text-lg font-medium">
+                <span className="text-base md:text-lg font-semibold">
                   {faq.question}
                 </span>
                 {openIndex === index ? (
@@ -81,7 +111,7 @@ const Footer = () => {
                 )}
               </button>
               {openIndex === index && (
-                <p className="mt-3 text-gray-900 ">
+                <p className="mt-3 text-gray-700 leading-relaxed">
                   {faq.answer}
                 </p>
               )}
@@ -90,94 +120,61 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10">
         {/* Top Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              {/* Google Logo inside circle */}
-              <div className="w-9 h-9 rounded-full shadow-md flex items-center justify-center bg-white">
+            <div className="flex items-center space-x-3 mb-5">
+              <div className="w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
                   alt="Google Logo"
                   className="w-6 h-6 object-contain"
                 />
               </div>
-              <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight">
+              <span className="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Google Ambassador
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-700 leading-relaxed mb-6 max-w-md">
               Helping students join Google Student Ambassador Program through AI
-              expertise, Gemini project mentorship, and guaranteed referral
-              success.
+              expertise, Gemini mentorship & referral guidance.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                aria-label="Facebook"
-                className="text-gray-500  hover:text-blue-500 transition-colors transform hover:scale-110"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://twitter.com"
-                aria-label="Twitter"
-                className="text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors transform hover:scale-110"
-              >
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                aria-label="LinkedIn"
-                className="text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors transform hover:scale-110"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.instagram.com/gdsc__srinix/"
-                aria-label="Instagram"
-                className="text-gray-500 dark:text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-110"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="p-2 bg-white/70 rounded-full shadow hover:shadow-lg transition hover:scale-110"
+                >
+                  <Icon className="w-5 h-5 text-gray-600 hover:text-blue-500" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
+            <ul className="space-y-3 text-gray-700">
               <li>
-                <a
-                  href="#about"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                >
+                <a href="#about" className="hover:text-blue-600 transition">
                   AI Projects
                 </a>
               </li>
               <li>
-                <a
-                  href="#benefits"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                >
+                <a href="#benefits" className="hover:text-blue-600 transition">
                   Referral Benefits
                 </a>
               </li>
               <li>
-                <a
-                  href="#team"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                >
+                <a href="#team" className="hover:text-blue-600 transition">
                   About Me
                 </a>
               </li>
               <li>
-                <a
-                  href="#referral"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-                >
+                <a href="#referral" className="hover:text-blue-600 transition">
                   Unlock QR Scanner
                 </a>
               </li>
@@ -186,26 +183,24 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
-            <div className="space-y-4">
+            <h3 className="text-lg font-bold mb-6">Contact Us</h3>
+            <div className="space-y-4 text-gray-700">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-500" />
                 <a
                   href="mailto:sangramraju143@gmail.com"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                  className="hover:text-blue-600"
                 >
                   sangramraju143@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-500" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  Available via application form
-                </span>
+                <span>Available via application form</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-red-500 mt-1" />
-                <span className="text-gray-600 dark:text-gray-400">
+                <span>
                   Srinix Campus
                   <br />
                   AI Lab & Innovation Center
@@ -216,12 +211,12 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="mt-12 pt-8 border-t border-gray-300 dark:border-gray-800">
+        <div className="mt-14 pt-8 border-t border-gray-300">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Get updates on AI projects and referral opportunities.
+              <h3 className="text-xl font-bold mb-2">Stay Updated</h3>
+              <p className="text-gray-700">
+                Subscribe for AI projects & referral opportunities 🚀
               </p>
             </div>
             <form
@@ -230,18 +225,13 @@ const Footer = () => {
             >
               <input
                 type="email"
-                placeholder="Enter your email for AI updates"
+                placeholder="Enter your email"
                 required
-                aria-label="Email for AI updates"
-                className="flex-1 px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg 
-                           focus:ring-2 focus:ring-blue-500 focus:border-transparent 
-                           text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                className="flex-1 px-4 py-3 bg-white/70 backdrop-blur rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white 
-                           px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 
-                           transition-colors font-medium"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-lg transition"
               >
                 Subscribe
               </button>
@@ -250,32 +240,33 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-gray-300 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-600 dark:text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 AI Ambassador Referral Program. All rights reserved.
-          </div>
-          <div className="flex space-x-6 text-sm">
-            <a
-              href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-            >
+        <div className="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+          <div>© 2025 AI Ambassador Referral Program. All rights reserved.</div>
+          <div className="flex space-x-6 mt-3 md:mt-0">
+            <a href="#" className="hover:text-blue-600">
               Privacy Policy
             </a>
-            <a
-              href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-            >
+            <a href="#" className="hover:text-blue-600">
               Terms of Service
             </a>
-            <a
-              href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-500"
-            >
+            <a href="#" className="hover:text-blue-600">
               Cookie Policy
             </a>
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      {showTop && (
+        <button
+          onClick={() =>
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-110 transition z-50"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      )}
     </section>
   );
 };

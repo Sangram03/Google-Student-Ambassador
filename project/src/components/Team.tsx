@@ -60,7 +60,7 @@ const Team: React.FC = () => {
 
   const mentor: Mentor = {
     name: "Krishna Bera",
-    role: "Mentor & Strategic Advisor",
+    role: "Mentor & Strategic Advisor , Assistant Professor",
     img: Images.KrishImage,
     linkedin: "#",
     twitter: "#",
@@ -69,18 +69,27 @@ const Team: React.FC = () => {
   };
 
   const teamMembers: TeamMember[] = [
+     { 
+      name: "Sangram Das", 
+      role: "Overall Lead , 4th Year", 
+      img: Images.SangramDas, 
+      linkedin: "https://www.linkedin.com/in/sangram-das-710397275", 
+      twitter: "https://x.com/sangramdas_1", 
+      github: "https://github.com/Sangram03",
+      specialty: "MERN-Stack DEV + AI"
+    },
     { 
       name: "Rajib Panda", 
-      role: "Frontend Lead", 
+      role: "Frontend Lead , 4th Year", 
       img: Images.RajibPanda, 
-      linkedin: "#", 
+      linkedin: "", 
       twitter: "#", 
       github: "#",
       specialty: "React Specialist + AI"
     },
     { 
       name: "Krushna Chandra Bindhani", 
-      role: "Frontend Lead", 
+      role: "Frontend Lead , 4th Year", 
       img: Images.KrushnaChandraBindhani, 
       linkedin: "https://www.linkedin.com/in/krushna-chandra-bindhani-1b1342275", 
       twitter: "#", 
@@ -89,7 +98,7 @@ const Team: React.FC = () => {
     },
     { 
       name: "Bhababhanjan Panda", 
-      role: "Frontend Lead", 
+      role: "Frontend Lead , 4th Year", 
       img: Images.BhabaImage, 
       linkedin: "https://www.linkedin.com/in/bhababhanjan-panda-65b340275/", 
       twitter: "#", 
@@ -98,7 +107,7 @@ const Team: React.FC = () => {
     },
     { 
       name: "Kajal Panigrahi", 
-      role: "Content Writing", 
+      role: "Content Writing , 4th Year", 
       img: Images.KajalImage, 
       linkedin: "https://www.linkedin.com/in/kajal-panigrahi-99a23b275/", 
       twitter: "#", 
@@ -107,7 +116,7 @@ const Team: React.FC = () => {
     },
     { 
       name: "Chinmayee Charuprava Panda", 
-      role: "Content Writing", 
+      role: "Content Writing , 4th Year", 
       img: Images.CharuPanda, 
       linkedin: "#", 
       twitter: "#", 
@@ -116,7 +125,7 @@ const Team: React.FC = () => {
     },
     { 
       name: "Sadashiba Behera", 
-      role: "Social Media Manager", 
+      role: "Social Media Manager , 4th Year", 
       img: Images.SadashibaBeheraImage, 
       linkedin: "#", 
       twitter: "#", 
@@ -125,7 +134,7 @@ const Team: React.FC = () => {
     },
     { 
       name: "Bhakti Ranjan Das", 
-      role: "Social Media Manager", 
+      role: "Social Media Manager , 4th Year", 
       img: Images.BhakiDas, 
       linkedin: "https://www.linkedin.com/in/bhakti-ranjan-das-a87094275", 
       twitter: "#", 
@@ -134,22 +143,14 @@ const Team: React.FC = () => {
     },
     { 
       name: "Prakash Jena", 
-      role: "Backend Lead", 
+      role: "Backend Lead , 4th Year", 
       img: Images.Prakashjena, 
       linkedin: "#", 
       twitter: "#", 
       github: "#",
       specialty: "API Architect + AI"
     },
-    { 
-      name: "Sangram Das", 
-      role: "Overall Lead", 
-      img: Images.SangramDas, 
-      linkedin: "https://www.linkedin.com/in/sangram-das-710397275", 
-      twitter: "#", 
-      github: "#",
-      specialty: "MERN-Stack DEV + AI"
-    },
+   
   ];
 
   const stats: StatItem[] = [

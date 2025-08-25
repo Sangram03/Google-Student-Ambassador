@@ -38,7 +38,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-white relative overflow-hidden">
+    <section id="hero" className="min-h-screen bg-white relative overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         {/* Main gradient orbs */}
@@ -103,8 +103,8 @@ const Hero = () => {
             <div className="text-center lg:text-left space-y-8">
 
               {/* Animated Badge */}
-              <div className="inline-flex mt-10 items-center  border-black space-x-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-lg text-white px-6 py-3 rounded-full border border-cyan-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group shadow-lg shadow-cyan-500/25">
-                <div className="relative">
+              <div className="inline-flex mt-10 items-center  border-black space-x-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-lg text-white px-6 py-3 rounded-full border  hover:scale-105 transition-all duration-300 cursor-pointer group shadow-lg shadow-cyan-500/25">
+                <div className="relative ">
                   <Rocket className="w-5 h-5 text-cyan-400 animate-bounce" />
                   <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
                 </div>
@@ -142,10 +142,10 @@ const Hero = () => {
               </div>
 
               {/* Enhanced Description */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r  from-cyan-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="relative bg-white/10 backdrop-blur-lg border border-black rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl">
-                  <p className="text-lg sm:text-xl text-black  leading-relaxed mb-6">
+              <div className="relative group border border-black border-r">
+                <div className="absolute inset-0 bg-gradient-to-r    from-cyan-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-lg  rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl">
+                  <p className="text-lg sm:text-xl text-black   leading-relaxed mb-6">
                     🌟 Join <span className="text-cyan-400 font-bold text-xl">500+ selected students</span> as a{" "}
                     <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold">
                       Google Student Ambassador
@@ -153,14 +153,14 @@ const Hero = () => {
                     <span className="text-pink-400 font-bold">AI & Gemini projects</span> at our campus!
                   </p>
 
-                  <div className="grid grid-cols-2  sm:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2   sm:grid-cols-4 gap-3">
                     {[
                       { icon: "🎯", label: "Priority Selection" },
                       { icon: "🚀", label: "Google Mentorship" },
                       { icon: "💎", label: "Career Boost" },
                       { icon: "🌟", label: "Exclusive Access" }
                     ].map((benefit, index) => (
-                      <div key={index} className="bg-gradient-to-r border-black from-purple-500/30 to-blue-500/30 backdrop-blur-sm text-white px-3 py-2 rounded-2xl text-sm font-medium border border-purple-400/30 hover:scale-105 transition-all duration-200 text-center group cursor-pointer">
+                      <div key={index} className="bg-gradient-to-r   from-purple-500/30 to-blue-500/30 backdrop-blur-sm text-white px-3 py-2 rounded-2xl text-sm font-medium border border-black hover:scale-105 transition-all duration-200 text-center group cursor-pointer">
                         <div className="text-lg group-hover:scale-125 transition-transform duration-200">{benefit.icon}</div>
                         <div className="text-xs">{benefit.label}</div>
                       </div>

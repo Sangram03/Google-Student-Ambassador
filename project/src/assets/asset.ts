@@ -11,6 +11,7 @@ import CharuPanda from "./CharuPanda.jpg";
 import Scanner from "./Scanner.jpg";
 import SadashibaBeheraImage from "./SadashibaBehera.jpg";
 import KrishImage from "./Krish.jpg"
+import MailImage from "./Mail.png"
 
 
 export {
@@ -24,5 +25,6 @@ export {
   CharuPanda,
   Scanner,
   SadashibaBeheraImage,
-  KrishImage
+  KrishImage,
+  MailImage
 };
