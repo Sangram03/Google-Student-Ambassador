@@ -10,9 +10,10 @@ import RajibPanda from "./RajibPanda.jpg";
 import CharuPanda from "./CharuPanda.jpg";
 import Scanner from "./Scanner.jpg";
 import SadashibaBeheraImage from "./SadashibaBehera.jpg";
-import KrishImage from "./Krish.jpg"
-import MailImage from "./Mail.png"
-import TeamImage from "./Team.jpg"
+import KrishImage from "./Krish.jpg";
+import MailImage from "./Mail.png";
+import TeamImage from "./Team.jpg";
+import PosterImage from "./Poster.jpg";
 
 
 export {
@@ -28,5 +29,6 @@ export {
   SadashibaBeheraImage,
   KrishImage,
   MailImage,
-  TeamImage
+  TeamImage,
+  PosterImage
 };

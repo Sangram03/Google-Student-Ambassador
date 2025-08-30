@@ -1,5 +1,6 @@
 import { ArrowRight, Star, Users, Trophy, Sparkles, ChevronDown, Play, Award, Zap, Rocket } from "lucide-react";
 import { useState, useEffect } from "react";
+import * as Images from '../assets/asset';
 
 const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -236,7 +237,7 @@ const Hero = () => {
                       onClick={() => setIsPlaying(!isPlaying)}
                     >
                       <img
-                        src="https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif"
+                        src={Images.PosterImage}
                         alt="Gemini AI Innovation"
                         className="w-full h-64 sm:h-80 object-cover rounded-2xl"
                       />

@@ -1,5 +1,6 @@
 import { Target, Brain, Code, Sparkles } from 'lucide-react';
 
+
 const About = () => {
   const features = [
     {
