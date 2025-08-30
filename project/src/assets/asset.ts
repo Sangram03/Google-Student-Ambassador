@@ -12,6 +12,7 @@ import Scanner from "./Scanner.jpg";
 import SadashibaBeheraImage from "./SadashibaBehera.jpg";
 import KrishImage from "./Krish.jpg"
 import MailImage from "./Mail.png"
+import TeamImage from "./Team.jpg"
 
 
 export {
@@ -26,5 +27,6 @@ export {
   Scanner,
   SadashibaBeheraImage,
   KrishImage,
-  MailImage
+  MailImage,
+  TeamImage
 };
