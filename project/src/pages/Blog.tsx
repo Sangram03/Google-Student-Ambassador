@@ -12,6 +12,10 @@ const Blog = () => {
       img: Images.MailImage,
       desc: "A Selection Mail is an official confirmation sent to candidates who have successfully cleared the recruitment or admission process. It usually includes details about next steps, joining instructions, and important guidelines.",
     },
+    {
+      img: Images.TeamImage,
+      desc: "The Google Student Ambassador Team.",
+    },
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
